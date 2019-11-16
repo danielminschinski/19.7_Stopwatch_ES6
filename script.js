@@ -12,7 +12,7 @@ class Stopwatch extends React.Component {
         }
     }
 
-    reset(){
+    /*reset(){
         this.setState({
             times: {
                 minutes: 0,
@@ -25,13 +25,29 @@ class Stopwatch extends React.Component {
     resetTimer(){
         this.reset();
         this.print();
-    }
+    }*/
+
+    
+
+    reset(){
+            this.setState({
+                times: {
+                    minutes: 0,
+                    seconds: 0,
+                    miliseconds: 0   
+                }
+            });
+            this.print(); 
+        }
+        
+
 
     print(){
         this.setState({
             display: this.format(this.state.times)
         });
     }
+    
 
 
     format(times){
@@ -106,7 +122,7 @@ class Stopwatch extends React.Component {
                <nav>
                     <button className='start' onClick={this.start.bind(this)}>Start</button>
                     <button className='stop' onClick={this.stop.bind(this)}>Stop</button>
-                    <button className='reset' onClick={this.resetTimer.bind(this)}>Reset</button>
+                    <button className='reset' onClick={this.reset.bind(this)}>Reset</button>
                </nav>
                <div className='stopwatch'>{this.state.display}</div>
            </div>

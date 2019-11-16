@@ -28,6 +28,20 @@ var Stopwatch = function (_React$Component) {
         return _this;
     }
 
+    /*reset(){
+        this.setState({
+            times: {
+                minutes: 0,
+                seconds: 0,
+                miliseconds: 0
+            }
+        });
+    }
+      resetTimer(){
+        this.reset();
+        this.print();
+    }*/
+
     _createClass(Stopwatch, [{
         key: 'reset',
         value: function reset() {
@@ -38,11 +52,6 @@ var Stopwatch = function (_React$Component) {
                     miliseconds: 0
                 }
             });
-        }
-    }, {
-        key: 'resetTimer',
-        value: function resetTimer() {
-            this.reset();
             this.print();
         }
     }, {
@@ -147,7 +156,7 @@ var Stopwatch = function (_React$Component) {
                     ),
                     React.createElement(
                         'button',
-                        { className: 'reset', onClick: this.resetTimer.bind(this) },
+                        { className: 'reset', onClick: this.reset.bind(this) },
                         'Reset'
                     )
                 ),
